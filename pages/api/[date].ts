@@ -5,7 +5,11 @@ const handler = (req: NextApiRequest, res: NextApiResponse<ApiResult>) => {
   if (req.method === 'GET') {
     const { date: dateString } = req.query;
 
-    const date = new Date(dateString as string);
+    const date = new Date(
+      !isNaN(dateString as unknown as number)
+        ? parseInt(dateString as string)
+        : (dateString as string)
+    );
 
     if (date.valueOf()) {
       return res
