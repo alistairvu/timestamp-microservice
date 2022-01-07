@@ -1,16 +1,44 @@
-html,
 body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #222;
+  background-color: #fafafa;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.container {
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+hr {
+  margin: 25px;
+}
+
+.footer {
+  margin-top: 40px;
+}
+
+code {
+  font-family: monospace;
+  padding: 2px;
+  color: black;
+  background-color: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 0.5em;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+  color: #2574a9;
 }
