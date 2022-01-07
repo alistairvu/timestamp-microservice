@@ -5,16 +5,13 @@ const handler = (req: NextApiRequest, res: NextApiResponse<ApiResult>) => {
   if (req.method === 'GET') {
     const { date: dateString } = req.query;
 
-    try {
-      const date = new Date(
-        Number.isNaN(parseInt(dateString as string))
-          ? (dateString as string)
-          : parseInt(dateString as string)
-      );
+    const date = new Date(dateString as string);
+
+    if (date.valueOf()) {
       return res
         .status(200)
         .send({ unix: date.valueOf(), utc: date.toUTCString() });
-    } catch (_) {
+    } else {
       return res.status(401).send({ error: 'Invalid Date' });
     }
   }
